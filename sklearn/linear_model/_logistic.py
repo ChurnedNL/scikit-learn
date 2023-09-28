@@ -467,7 +467,12 @@ def _logistic_regression_path(
                 method="L-BFGS-B",
                 jac=True,
                 args=(X, target, sample_weight, l2_reg_strength, n_threads),
-                options={"iprint": iprint, "gtol": tol, "maxiter": max_iter},
+                options={
+                    "iprint": iprint,
+                    "gtol": tol,
+                    "maxiter": max_iter,
+                    "maxfun": max_iter,
+                },
             )
             n_iter_i = _check_optimize_result(
                 solver,
