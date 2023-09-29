@@ -29,14 +29,13 @@ except ImportError:
 builtins.__SKLEARN_SETUP__ = True
 
 
-DISTNAME = "scikit-learn"
-DESCRIPTION = "A set of python modules for machine learning and data mining"
+DISTNAME = "qntq-scikit-learn"
+DESCRIPTION = "A set of python modules for machine learning and data mining, modified by Churned"
 with open("README.rst") as f:
     LONG_DESCRIPTION = f.read()
-MAINTAINER = "Andreas Mueller"
-MAINTAINER_EMAIL = "amueller@ais.uni-bonn.de"
-URL = "http://scikit-learn.org"
-DOWNLOAD_URL = "https://pypi.org/project/scikit-learn/#files"
+MAINTAINER = "Vasco Mota"
+MAINTAINER_EMAIL = "v.mota@churned.nl"
+URL = "https://github.com/ChurnedNL/scikit-learn"
 LICENSE = "new BSD"
 PROJECT_URLS = {
     "Bug Tracker": "https://github.com/scikit-learn/scikit-learn/issues",
@@ -565,7 +564,6 @@ def setup_package():
         description=DESCRIPTION,
         license=LICENSE,
         url=URL,
-        download_url=DOWNLOAD_URL,
         project_urls=PROJECT_URLS,
         version=VERSION,
         long_description=LONG_DESCRIPTION,
