@@ -20,14 +20,15 @@ RUN curl -L -O "https://github.com/conda-forge/miniforge/releases/latest/downloa
 
 RUN conda update conda -y
 
-RUN conda create -n sklearn-dev -c conda-forge --yes -v python numpy scipy cython joblib threadpoolctl pytest compilers
+RUN conda create -n sklearn-dev -c conda-forge --yes -v python=3.8.0 numpy scipy cython joblib threadpoolctl pytest compilers
 
 RUN conda init
 
-RUN conda activate sklearn-dev
-
-RUN git clone https://github.com/ChurnedNL/scikit-learn.git && cd scikit-learn && git checkout origin/build_lbfgs
-
-RUN python setup.py bdist_wheel
-
-CMD ["conda list"]
+# docker run -it --entrypoint bash qntq-sklearn-linux-build
+#RUN conda activate sklearn-dev
+#
+#RUN git clone https://github.com/ChurnedNL/scikit-learn.git && cd scikit-learn && git checkout origin/build_lbfgs
+#
+#RUN python setup.py bdist_wheel
+#
+#CMD ["conda list"]
